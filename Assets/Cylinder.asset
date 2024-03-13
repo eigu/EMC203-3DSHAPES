@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Cylinder
   m_EditorClassIdentifier: 
   Segments: 24
-  Height: 2
-  TransformPosition: {x: 0, y: 0, z: -5}
+  Radius: 1
+  Height: 3
+  TransformPosition: {x: -8.57, y: 2.56, z: -5}

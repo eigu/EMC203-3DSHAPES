@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09b2454616197548a9c681349bcdfb6, type: 3}
   m_Name: Sphere
   m_EditorClassIdentifier: 
-  Segments: 28
-  Radius: 4
-  TransformPosition: {x: 0, y: 0, z: 0}
+  Segments: 16
+  Radius: 1
+  TransformPosition: {x: -5.61, y: -2.29, z: -5}

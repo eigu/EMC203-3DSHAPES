@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2930b9a3711b888419709ce1f1257d3b, type: 3}
   m_Name: Cube
   m_EditorClassIdentifier: 
-  Length: 5
-  Height: 5
-  Width: 5
-  TransformPosition: {x: 0, y: 0, z: -1}
+  Length: 1
+  Height: 1
+  Width: 1
+  TransformPosition: {x: 0, y: 0, z: -8.08}
+  TransformRotation: {x: 0, y: 0, z: 0}
