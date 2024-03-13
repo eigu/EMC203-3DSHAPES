@@ -11,30 +11,27 @@ public class Sphere : ScriptableObject
     {
         get
         {
-            Vector3[] vertices = new Vector3[Segments * Segments];
-            float angleIncrement = 360f / Segments;
-            float verticalAngleIncrement = 180f / (Segments - 1);
+            int vertexCount = (Segments + 1) * (Segments + 1);
+            Vector3[] vertices = new Vector3[vertexCount];
 
-            int vertexIndex = 0;
-
-            for (int i = 0; i < Segments; i++)
+            for (int i = 0; i <= Segments; i++)
             {
-                for (int j = 0; j < Segments; j++)
+                for (int j = 0; j <= Segments; j++)
                 {
-                    float x = TransformPosition.x + Radius
-                        * Mathf.Sin(Mathf.Deg2Rad * i * angleIncrement)
-                        * Mathf.Cos(Mathf.Deg2Rad * j * verticalAngleIncrement);
+                    float u = (float)i / Segments;
+                    float v = (float)j / Segments;
 
-                    float z = TransformPosition.z + Radius
-                        * Mathf.Sin(Mathf.Deg2Rad * i * angleIncrement)
-                        * Mathf.Sin(Mathf.Deg2Rad * j * verticalAngleIncrement);
+                    float theta = u * 2 * Mathf.PI;
+                    float phi = v * Mathf.PI;
 
-                    float y = TransformPosition.y + Radius
-                        * Mathf.Cos(Mathf.Deg2Rad * i * angleIncrement);
+                    float x = Mathf.Sin(phi) * Mathf.Cos(theta);
+                    float y = Mathf.Cos(phi);
+                    float z = Mathf.Sin(phi) * Mathf.Sin(theta);
 
-                    vertices[vertexIndex++] = new Vector3(x, y, z);
+                    vertices[i * (Segments + 1) + j] = new Vector3(x, y, z) * Radius + TransformPosition;
                 }
             }
+
             return vertices;
         }
     }

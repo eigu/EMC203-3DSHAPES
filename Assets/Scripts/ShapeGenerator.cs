@@ -32,27 +32,27 @@ public class ShapeGenerator : MonoBehaviour
     private void DrawShapes()
     {
         #region Shape
-        //DrawLine(_drawShape.ActualPoints);
+        DrawLine(_drawShape.ActualPoints);
         #endregion
 
         #region Cube
-        //DrawLine(_drawCube.FrontSide);
-        //DrawLine(_drawCube.BackSide);
-        //DrawLine(_drawCube.LeftSide);
-        //DrawLine(_drawCube.RightSide);
+        DrawLine(_drawCube.FrontSide);
+        DrawLine(_drawCube.BackSide);
+        DrawLine(_drawCube.LeftSide);
+        DrawLine(_drawCube.RightSide);
         #endregion
 
         #region Pyramid
-        //DrawLine(_drawPyramid.FrontSide);
-        //DrawLine(_drawPyramid.BackSide);
-        //DrawLine(_drawPyramid.LeftSide);
-        //DrawLine(_drawPyramid.RightSide);
+        DrawLine(_drawPyramid.FrontSide);
+        DrawLine(_drawPyramid.BackSide);
+        DrawLine(_drawPyramid.LeftSide);
+        DrawLine(_drawPyramid.RightSide);
         #endregion
 
         #region Cylinder
-        //DrawLine(_drawCylinder.TopSide);
-        //DrawLine(_drawCylinder.BottomSide);
-        //DrawLine(_drawCylinder.Sides);
+        DrawLine(_drawCylinder.TopSide);
+        DrawLine(_drawCylinder.BottomSide);
+        DrawLine(_drawCylinder.Sides);
         #endregion
 
         #region Sphere

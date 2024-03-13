@@ -4,6 +4,7 @@ using UnityEngine;
 public class Cylinder : ScriptableObject
 {
     public int Segments;
+    public int Radius;
     public float Height;
 
     public Vector3 TransformPosition;
@@ -18,8 +19,11 @@ public class Cylinder : ScriptableObject
 
             for (int i = 0; i < Segments; i++)
             {
-                float x = TransformPosition.x + Mathf.Cos(Mathf.Deg2Rad * i * angleIncrement);
-                float z = TransformPosition.z + Mathf.Sin(Mathf.Deg2Rad * i * angleIncrement);
+                float x = TransformPosition.x + Radius
+                    * Mathf.Cos(Mathf.Deg2Rad * i * angleIncrement);
+
+                float z = TransformPosition.z + Radius
+                    + Mathf.Sin(Mathf.Deg2Rad * i * angleIncrement);
 
                 frontVertices[i] = new Vector3(x, TransformPosition.y + Height / 2, z);
             }
@@ -38,8 +42,11 @@ public class Cylinder : ScriptableObject
 
             for (int i = 0; i < Segments; i++)
             {
-                float x = TransformPosition.x + Mathf.Cos(Mathf.Deg2Rad * i * angleIncrement);
-                float z = TransformPosition.z + Mathf.Sin(Mathf.Deg2Rad * i * angleIncrement);
+                float x = TransformPosition.x + Radius
+                    * Mathf.Cos(Mathf.Deg2Rad * i * angleIncrement);
+
+                float z = TransformPosition.z + Radius
+                    + Mathf.Sin(Mathf.Deg2Rad * i * angleIncrement);
 
                 backVertices[i] = new Vector3(x, TransformPosition.y - Height / 2, z);
             }
