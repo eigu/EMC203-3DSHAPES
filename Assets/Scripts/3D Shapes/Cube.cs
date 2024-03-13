@@ -72,9 +72,17 @@ public class Cube : ScriptableObject
         var cosZ = Mathf.Cos(zAngle);
         var sinZ = Mathf.Sin(zAngle);
 
-        var a = point1 * (cosY * cosZ) + point2 * (-cosY * sinZ) + point3 * sinY;
-        var b = point1 * (sinX * sinY * cosZ + cosX * sinZ) + point2 * (-sinX * sinY * sinZ + cosX * cosZ) + point3 * (-sinX * cosY);
-        var c = point1 * (-cosX * sinY * cosZ + sinX * sinZ) + point2 * (cosX * sinY * sinZ + sinX * cosZ) + point3 * (cosX * cosY);
+        var a = point1 * (cosY * cosZ)
+            + point2 * (-cosY * sinZ)
+            + point3 * sinY;
+
+        var b = point1 * (sinX * sinY * cosZ + cosX * sinZ)
+            + point2 * (-sinX * sinY * sinZ + cosX * cosZ)
+            + point3 * (-sinX * cosY);
+
+        var c = point1 * (-cosX * sinY * cosZ + sinX * sinZ)
+            + point2 * (cosX * sinY * sinZ + sinX * cosZ)
+            + point3 * (cosX * cosY);
 
         return new Vector3(a, b, c);
     }
@@ -85,7 +93,7 @@ public class Cube : ScriptableObject
         {
             return new Vector3[]
             {
-                new Vector3(TransformPosition.x +(Width/2), TransformPosition.y +(Height/2), TransformPosition.z + (Length/2)),
+                new Vector3(TransformPosition.x +(Width/2),TransformPosition.y +(Height/2), TransformPosition.z + (Length/2)),
                 new Vector3(TransformPosition.x +(Width/2), TransformPosition.y -(Height/2), TransformPosition.z + (Length/2)),
                 new Vector3(TransformPosition.x -(Width/2), TransformPosition.y -(Height/2), TransformPosition.z + (Length/2)),
                 new Vector3(TransformPosition.x -(Width/2), TransformPosition.y +(Height/2), TransformPosition.z + (Length/2))
