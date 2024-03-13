@@ -12,24 +12,29 @@ public class Sphere : ScriptableObject
         get
         {
             Vector3[] vertices = new Vector3[Segments * Segments];
+            float angleIncrement = 360f / Segments;
+            float verticalAngleIncrement = 180f / (Segments - 1);
 
-            int vertIndex = 0;
+            int vertexIndex = 0;
 
             for (int i = 0; i < Segments; i++)
             {
                 for (int j = 0; j < Segments; j++)
                 {
-                    float theta = Mathf.PI * (i + 1) / (Segments + 1);
-                    float phi = 2 * Mathf.PI * j / Segments;
+                    float x = TransformPosition.x + Radius
+                        * Mathf.Sin(Mathf.Deg2Rad * i * angleIncrement)
+                        * Mathf.Cos(Mathf.Deg2Rad * j * verticalAngleIncrement);
 
-                    float x = TransformPosition.x + Radius * Mathf.Sin(theta) * Mathf.Cos(phi);
-                    float y = TransformPosition.y + Radius * Mathf.Cos(theta);
-                    float z = TransformPosition.z + Radius * Mathf.Sin(theta) * Mathf.Sin(phi);
+                    float z = TransformPosition.z + Radius
+                        * Mathf.Sin(Mathf.Deg2Rad * i * angleIncrement)
+                        * Mathf.Sin(Mathf.Deg2Rad * j * verticalAngleIncrement);
 
-                    vertices[vertIndex++] = new Vector3(x, y, z);
+                    float y = TransformPosition.y + Radius
+                        * Mathf.Cos(Mathf.Deg2Rad * i * angleIncrement);
+
+                    vertices[vertexIndex++] = new Vector3(x, y, z);
                 }
             }
-
             return vertices;
         }
     }
